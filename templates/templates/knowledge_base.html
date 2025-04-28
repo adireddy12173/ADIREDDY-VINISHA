@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Learned Knowledge Base</title>
+</head>
+<body>
+    <h1>Knowledge Base</h1>
+    <ul>
+    {% for question, answer in knowledge.items() %}
+        <li><strong>{{ question }}</strong>: {{ answer }}</li>
+    {% endfor %}
+    </ul>
+</body>
+</html>
