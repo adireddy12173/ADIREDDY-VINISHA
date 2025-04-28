@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Supervisor Dashboard</title>
+</head>
+<body>
+    <h1>Pending Help Requests</h1>
+    {% for id, request in requests.items() %}
+        <div style="border:1px solid black; margin:10px; padding:10px;">
+            <p><strong>Caller:</strong> {{ request.caller_id }}</p>
+            <p><strong>Question:</strong> {{ request.question }}</p>
+            <form action="/submit_answer" method="POST">
+                <input type="hidden" name="request_id" value="{{ id }}">
+                <input type="text" name="answer" placeholder="Your Answer">
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    {% endfor %}
+</body>
+</html>
